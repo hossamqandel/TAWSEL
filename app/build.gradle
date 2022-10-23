@@ -55,7 +55,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
-    def nav_version = "2.5.2"
+    def nav_version = "2.5.1"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
@@ -76,7 +76,7 @@ dependencies {
 
 
     //ViewModel
-    def lifecycle_version = "2.5.0-alpha02"
+    def lifecycle_version = "2.5.0-alpha01"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
     kapt("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
@@ -96,11 +96,11 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.intuit.ssp:ssp-android:1.1.0'
 
-    //Country Code Picker
-    implementation 'com.hbb20:ccp:2.6.0'
-
-    //OTP PIN VIEW
-    implementation 'com.chaos.view:pinview:1.4.4'
+//    //Country Code Picker
+//    implementation 'com.hbb20:ccp:2.6.0'
+//
+//    //OTP PIN VIEW
+//    implementation 'com.chaos.view:pinview:1.4.2'
 
     //libphoneNumber
     implementation 'io.michaelrocks:libphonenumber-android:8.12.28'
@@ -116,5 +116,10 @@ dependencies {
 
     //Language
     implementation("com.akexorcist:localization:1.2.11")
+
+    //Glide
+    def glide_version = "4.14.2"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
 }

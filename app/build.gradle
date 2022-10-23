@@ -1,0 +1,120 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs.kotlin")
+}
+
+android {
+    compileSdk 32
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.hossam.tawsel"
+        minSdk 24
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+
+    def nav_version = "2.5.2"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    def daggerHilt_Version = "2.44"
+    implementation("com.google.dagger:hilt-android:$daggerHilt_Version")
+    kapt("com.google.dagger:hilt-android-compiler:$daggerHilt_Version")
+
+    def retrofit_version = "2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+
+    def swip_version = "1.1.0"
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:$swip_version")
+
+    def coroutines_version = "1.6.4"
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
+
+
+    //ViewModel
+    def lifecycle_version = "2.5.0-alpha02"
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    kapt("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
+    implementation 'androidx.fragment:fragment-ktx:1.5.3'
+
+    def maps_version = "3.4.0"
+    implementation "com.google.maps.android:maps-utils-ktx:$maps_version"
+
+    def leakCanary_version = "2.9.1"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanary_version"
+
+
+    //Hdodenhof Circle image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //intuit
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+
+    //Country Code Picker
+    implementation 'com.hbb20:ccp:2.6.0'
+
+    //OTP PIN VIEW
+    implementation 'com.chaos.view:pinview:1.4.4'
+
+    //libphoneNumber
+    implementation 'io.michaelrocks:libphonenumber-android:8.12.28'
+
+
+    //Material Dialog
+    def materialDialog_version = "3.3.0"
+    implementation "com.afollestad.material-dialogs:core:$materialDialog_version"
+    implementation "com.afollestad.material-dialogs:bottomsheets:$materialDialog_version"
+    implementation "com.afollestad.material-dialogs:input:$materialDialog_version"
+    implementation "com.afollestad.material-dialogs:color:$materialDialog_version"
+    implementation "com.afollestad.material-dialogs:lifecycle:$materialDialog_version"
+
+    //Language
+    implementation("com.akexorcist:localization:1.2.11")
+
+}

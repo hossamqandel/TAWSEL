@@ -3,17 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/languageFragment">
+    app:startDestination="@id/driverOrderDetailsFragment">
 
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.hossam.tawsel.feature_splash.presentation.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
-        <action
-            android:id="@+id/action_splashFragment_to_languageFragment"
-            app:destination="@id/languageFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_splash" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.hossam.tawsel.feature_auth.presentation.login.LoginFragment"
@@ -23,9 +19,15 @@
         android:id="@+id/languageFragment"
         android:name="com.hossam.tawsel.feature_language.presentation.LanguageFragment"
         android:label="fragment_language"
-        tools:layout="@layout/fragment_language" >
-        <action
-            android:id="@+id/action_languageFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_language" />
+    <fragment
+        android:id="@+id/driverHomeFragment"
+        android:name="com.hossam.tawsel.feature_home.presentation.driver.DriverHomeFragment"
+        android:label="fragment_driver_home"
+        tools:layout="@layout/fragment_driver_home" />
+    <fragment
+        android:id="@+id/driverOrderDetailsFragment"
+        android:name="com.hossam.tawsel.feature_order_details.presentation.driver.DriverOrderDetailsFragment"
+        android:label="fragment_driver_order_details"
+        tools:layout="@layout/fragment_driver_order_details" />
 </navigation>

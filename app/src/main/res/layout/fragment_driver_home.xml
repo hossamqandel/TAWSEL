@@ -354,7 +354,7 @@
                             android:layout_height="@dimen/_40sdp"
                             android:backgroundTint="@color/bright_gray"
                             android:fontFamily="@font/cairo_semibold"
-                            android:text="انهاء الطلب"
+                            android:text="الغاء الطلب"
                             android:stateListAnimator="@null"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12ssp"

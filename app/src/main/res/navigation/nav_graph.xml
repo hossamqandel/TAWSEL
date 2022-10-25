@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/changePasswordFragment">
+    app:startDestination="@id/profileFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -40,4 +40,9 @@
         android:name="com.hossam.tawsel.feature_profile.presentation.change_password.ChangePasswordFragment"
         android:label="fragment_change_password"
         tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.hossam.tawsel.feature_profile.presentation.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

@@ -120,11 +120,11 @@
                         app:tint="@color/white" />
 
                     <TextView
-                        android:id="@+id/textView16"
+                        android:id="@+id/tv_requiredMony"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/cairo_bold"
-                        android:text="1500"
+                        tools:text="1500"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_22ssp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline4"
@@ -139,9 +139,9 @@
                         android:text="ج.م"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_10ssp"
-                        app:layout_constraintBottom_toBottomOf="@+id/textView16"
-                        app:layout_constraintEnd_toStartOf="@+id/textView16"
-                        app:layout_constraintTop_toTopOf="@+id/textView16" />
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_requiredMony"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_requiredMony"
+                        app:layout_constraintTop_toTopOf="@+id/tv_requiredMony" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -170,6 +170,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView6" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_lastOrders"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="vertical"

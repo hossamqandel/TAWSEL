@@ -48,7 +48,7 @@
             app:layout_constraintGuide_begin="178dp" />
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/iv_Notification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_new_notification"
@@ -56,11 +56,12 @@
             app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_Logout"
             android:layout_width="@dimen/_142sdp"
             android:layout_height="@dimen/_38sdp"
             app:cardCornerRadius="@dimen/_16sdp"
             app:cardElevation="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_Notification"
             app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
             app:layout_constraintTop_toTopOf="@+id/guidelineTop">
 
@@ -94,18 +95,18 @@
         </com.google.android.material.card.MaterialCardView>
 
         <ImageView
-            android:id="@+id/imageView18"
+            android:id="@+id/btn_changeAvatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="3dp"
             android:src="@drawable/ic_edit_photo"
             android:layout_marginStart="-25dp"
             android:layout_marginBottom="-4dp"
-            app:layout_constraintBottom_toBottomOf="@+id/circleImageView2"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView2" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_driverAvatar"
+            app:layout_constraintStart_toEndOf="@+id/iv_driverAvatar" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView2"
+            android:id="@+id/iv_driverAvatar"
             android:layout_width="101dp"
             android:layout_height="101dp"
             android:elevation="1dp"
@@ -147,12 +148,12 @@
                         app:layout_constraintGuide_end="16dp" />
 
                     <TextView
-                        android:id="@+id/textView28"
+                        android:id="@+id/tv_driverName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_50sdp"
                         android:fontFamily="@font/cairo_semibold"
-                        android:text="محمد شادي"
+                        tools:text="محمد شادي"
                         android:textSize="@dimen/_14ssp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -168,10 +169,10 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/_13ssp"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
-                        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_driverName" />
 
                     <EditText
-                        android:id="@+id/editText4"
+                        android:id="@+id/et_fullName"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
@@ -195,18 +196,19 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/_13ssp"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
-                        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+                        app:layout_constraintTop_toBottomOf="@+id/et_fullName" />
 
                     <EditText
-                        android:id="@+id/editText5"
+                        android:id="@+id/et_phoneNum"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:background="@drawable/et_shape"
                         android:elevation="2dp"
+                        android:inputType="phone"
                         android:paddingHorizontal="@dimen/_12sdp"
                         android:paddingVertical="@dimen/_10sdp"
-                        android:text="01114821215"
+                        tools:text="01114821215"
                         android:textAlignment="viewEnd"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
                         app:layout_constraintStart_toStartOf="@+id/guidelineInnerStart"
@@ -223,10 +225,10 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/_13ssp"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
-                        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+                        app:layout_constraintTop_toBottomOf="@+id/et_phoneNum" />
 
                     <EditText
-                        android:id="@+id/editText6"
+                        android:id="@+id/et_address"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
@@ -246,12 +248,12 @@
                         android:layout_marginStart="@dimen/_12sdp"
                         android:elevation="2dp"
                         android:src="@drawable/ic_location_grey"
-                        app:layout_constraintBottom_toBottomOf="@+id/editText6"
-                        app:layout_constraintStart_toStartOf="@+id/editText6"
-                        app:layout_constraintTop_toTopOf="@+id/editText6" />
+                        app:layout_constraintBottom_toBottomOf="@+id/et_address"
+                        app:layout_constraintStart_toStartOf="@+id/et_address"
+                        app:layout_constraintTop_toTopOf="@+id/et_address" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/materialButton4"
+                        android:id="@+id/btn_saveChanges"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_44sdp"
                         android:layout_marginTop="@dimen/_16sdp"
@@ -263,16 +265,17 @@
                         app:cornerRadius="6dp"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
                         app:layout_constraintStart_toStartOf="@+id/guidelineInnerStart"
-                        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+                        app:layout_constraintTop_toBottomOf="@+id/et_address" />
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_changePass"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_44sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:backgroundTint="@color/light_silver"
                         android:fontFamily="@font/cairo_semibold"
                         android:stateListAnimator="@null"
-                        android:text="تغيير الرقم السري"
+                        tools:text="تغيير الرقم السري"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14ssp"
                         app:cornerRadius="6dp"
@@ -282,7 +285,7 @@
                         app:iconTint="@color/black"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
                         app:layout_constraintStart_toStartOf="@+id/guidelineInnerStart"
-                        app:layout_constraintTop_toBottomOf="@+id/materialButton4" />
+                        app:layout_constraintTop_toBottomOf="@+id/btn_saveChanges" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

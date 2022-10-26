@@ -7,11 +7,11 @@
     android:paddingVertical="8dp">
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/tv_orderCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cairo_semibold"
-        android:text="رقم الطلب #4521"
+        tools:text="رقم الطلب #4521"
         android:textColor="@color/black"
         android:textSize="@dimen/_13ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,14 +22,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cairo_semibold"
-        android:text="+40"
+        tools:text="+40"
         android:textColor="@color/black"
         android:textSize="@dimen/_13ssp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/tv_orderDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_2sdp"
@@ -37,7 +37,7 @@
         android:text="03.10.2020"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_orderCode" />
 
     <View
         android:id="@+id/view2"
@@ -47,7 +47,7 @@
         android:background="@color/light_silver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_orderDate" />
 
     <TextView
         android:id="@+id/textView23"
@@ -60,11 +60,11 @@
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/tv_fullCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cairo_bold"
-        android:text="1500 ج.م"
+        tools:text="1500 ج.م"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -77,7 +77,7 @@
         android:src="@drawable/dotted"
         android:visibility="gone"
         tools:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/textView24"
+        app:layout_constraintBottom_toTopOf="@+id/tv_fullCost"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

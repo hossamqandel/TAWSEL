@@ -71,7 +71,7 @@
                 android:padding="@dimen/_12sdp">
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/switchMaterial"
+                    android:id="@+id/stb_Connectivity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -88,18 +88,19 @@
                     android:text="حالة العمل"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp"
-                    app:layout_constraintBottom_toTopOf="@+id/switchMaterial"
+                    app:layout_constraintBottom_toTopOf="@+id/stb_Connectivity"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/switchMaterial" />
+                    app:layout_constraintTop_toTopOf="@+id/stb_Connectivity" />
 
                 <TextView
+                    android:id="@+id/tv_onlineStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/cairo_regular"
                     android:text="متصل الان"
                     android:textColor="@color/orange"
                     android:textSize="@dimen/_14ssp"
-                    app:layout_constraintBottom_toBottomOf="@+id/switchMaterial"
+                    app:layout_constraintBottom_toBottomOf="@+id/stb_Connectivity"
                     app:layout_constraintEnd_toEndOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -144,6 +145,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
                 <TextView
+                    android:id="@+id/tv_CurrentLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_4sdp"
@@ -215,7 +217,7 @@
                         android:padding="@dimen/_14sdp">
 
                         <TextView
-                            android:id="@+id/textView8"
+                            android:id="@+id/tv_paymentType"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cairo_bold"
@@ -226,7 +228,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/circleImageView"
+                            android:id="@+id/tv_restaurantLogo"
                             android:layout_width="49dp"
                             android:layout_height="49dp"
                             android:src="@drawable/person"
@@ -234,7 +236,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/textView10"
+                            android:id="@+id/tv_restaurantName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="@dimen/_6sdp"
@@ -243,7 +245,7 @@
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14ssp"
                             app:layout_constraintBottom_toBottomOf="@+id/textView8"
-                            app:layout_constraintEnd_toStartOf="@+id/circleImageView"
+                            app:layout_constraintEnd_toStartOf="@+id/tv_restaurantLogo"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
@@ -251,12 +253,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_location_grey"
-                            app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
-                            app:layout_constraintEnd_toEndOf="@+id/textView10"
-                            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_restaurantLogo"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_restaurantName"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_restaurantName" />
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/tv_CurrentLocation2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="@dimen/_2sdp"
@@ -269,7 +271,7 @@
 
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/materialButton"
+                            android:id="@+id/btn_showOrderDetails"
                             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -278,7 +280,7 @@
                             android:text="عرض تفاصيل الطلب"
                             android:textColor="@color/orange"
                             android:textSize="@dimen/_12ssp"
-                            app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_restaurantLogo"
                             app:strokeColor="@color/orange"
                             tools:layout_editor_absoluteX="18dp" />
 
@@ -337,7 +339,7 @@
                             app:layout_constraintTop_toTopOf="@+id/imageView9" />
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/materialButton2"
+                            android:id="@+id/btn_completeOrder"
                             android:layout_width="@dimen/_110sdp"
                             android:layout_height="@dimen/_40sdp"
                             android:backgroundTint="@color/orange"
@@ -350,6 +352,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
                         <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_cancelOrder"
                             android:layout_width="@dimen/_110sdp"
                             android:layout_height="@dimen/_40sdp"
                             android:backgroundTint="@color/bright_gray"
@@ -358,9 +361,9 @@
                             android:stateListAnimator="@null"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12ssp"
-                            app:layout_constraintBottom_toBottomOf="@+id/materialButton2"
+                            app:layout_constraintBottom_toBottomOf="@+id/btn_completeOrder"
                             app:layout_constraintStart_toStartOf="@+id/view"
-                            app:layout_constraintTop_toTopOf="@+id/materialButton2" />
+                            app:layout_constraintTop_toTopOf="@+id/btn_completeOrder" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -400,6 +403,7 @@
                             app:layout_constraintGuide_begin="37dp" />
 
                         <TextView
+                            android:id="@+id/tv_orderQuantity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cairo_bold"
@@ -460,6 +464,7 @@
                             app:layout_constraintGuide_begin="37dp" />
 
                         <TextView
+                            android:id="@+id/tv_requiredMony"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/orange"
@@ -475,7 +480,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
-                            android:text="عدد الطلبات"
+                            android:text="المستحقات المطلوبة"
                             android:fontFamily="@font/cairo_regular"
                             android:textSize="@dimen/_14ssp"
                             app:layout_constraintTop_toBottomOf="@id/guideline15"

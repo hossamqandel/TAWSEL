@@ -27,12 +27,12 @@ class DriverHomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.switchMaterial.setOnCheckedChangeListener { compoundButton, b ->
+        binding.stbConnectivity.setOnCheckedChangeListener { compoundButton, b ->
             if (b){
                 //TODO after finishing this screen design.. make extension fun that help to setSwitchButtonTrackTint
-                binding.switchMaterial.trackTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
+                binding.stbConnectivity.trackTintList = ColorStateList.valueOf(resources.getColor(R.color.orange))
             } else {
-                binding.switchMaterial.trackTintList = ColorStateList.valueOf(colorOnSurface)
+                binding.stbConnectivity.trackTintList = ColorStateList.valueOf(colorOnSurface)
             }
         }
     }

@@ -70,35 +70,35 @@
                 android:padding="@dimen/_14sdp">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_paymentType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/cairo_bold"
-                    android:text="كاش"
+                    tools:text="كاش"
                     android:textColor="@color/orange"
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/circleImageView"
+                    android:id="@+id/tv_restaurantLogo"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
-                    android:src="@drawable/person"
+                    tools:src="@drawable/person"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/tv_restaurantName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_6sdp"
                     android:fontFamily="@font/cairo_regular"
-                    android:text="كريسبي و كرانشي"
+                    tools:text="كريسبي و كرانشي"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14ssp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView8"
-                    app:layout_constraintEnd_toStartOf="@+id/circleImageView"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_paymentType"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_restaurantLogo"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
@@ -106,24 +106,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_location_grey"
-                    app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
-                    app:layout_constraintEnd_toEndOf="@+id/textView10"
-                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_restaurantLogo"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_restaurantName"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_restaurantName" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tv_orderLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_2sdp"
                     android:fontFamily="@font/cairo_regular"
-                    android:text="شارع 10 - باب الشعرية - القاهره"
+                    tools:text="شارع 10 - باب الشعرية - القاهره"
                     android:textSize="@dimen/_10ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView7"
                     app:layout_constraintEnd_toStartOf="@+id/imageView7"
                     app:layout_constraintTop_toTopOf="@+id/imageView7" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/materialButton"
+                    android:id="@+id/btn_showOrderDetails"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
                     android:text="عرض تفاصيل الطلب"
                     android:textColor="@color/orange"
                     android:textSize="@dimen/_12ssp"
-                    app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_restaurantLogo"
                     app:strokeColor="@color/orange"
                     tools:layout_editor_absoluteX="18dp" />
 
@@ -142,9 +142,9 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="@dimen/_11sdp"
                     android:background="@color/light_silver"
-                    app:layout_constraintEnd_toEndOf="@+id/materialButton"
-                    app:layout_constraintStart_toStartOf="@+id/materialButton"
-                    app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+                    app:layout_constraintEnd_toEndOf="@+id/btn_showOrderDetails"
+                    app:layout_constraintStart_toStartOf="@+id/btn_showOrderDetails"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_showOrderDetails" />
 
                 <ImageView
                     android:id="@+id/imageView8"
@@ -152,17 +152,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_11sdp"
                     android:backgroundTint="@color/orange"
+                    app:tint="@color/orange"
                     android:src="@drawable/ic_location_grey"
                     app:layout_constraintEnd_toEndOf="@+id/view"
                     app:layout_constraintTop_toBottomOf="@+id/view" />
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/tv_orderDropLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:fontFamily="@font/cairo_regular"
-                    android:text="شارع 44 - السبتية - القاهره"
+                    tools:text="شارع 44 - السبتية - القاهره"
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView8"
                     app:layout_constraintEnd_toStartOf="@+id/imageView8"
@@ -184,14 +185,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_2sdp"
                     android:fontFamily="@font/cairo_regular"
-                    android:text="20/10/2021 ، 11:00ص"
+                    tools:text="20/10/2021 ، 11:00ص"
                     android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView9"
                     app:layout_constraintEnd_toStartOf="@+id/imageView9"
                     app:layout_constraintTop_toTopOf="@+id/imageView9" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/materialButton2"
+                    android:id="@+id/btn_completeOrder"
                     android:layout_width="@dimen/_110sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:backgroundTint="@color/orange"
@@ -205,6 +206,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cancelOrder"
                     android:layout_width="@dimen/_110sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:backgroundTint="@color/bright_gray"
@@ -214,15 +216,15 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12ssp"
                     app:cornerRadius="5dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/materialButton2"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_completeOrder"
                     app:layout_constraintStart_toStartOf="@+id/view"
-                    app:layout_constraintTop_toTopOf="@+id/materialButton2" />
+                    app:layout_constraintTop_toTopOf="@+id/btn_completeOrder" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton3"
+            android:id="@+id/btn_callClient"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="@dimen/_48sdp"
@@ -241,13 +243,13 @@
             app:strokeColor="@color/bleu_de_france" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/rv_orderDetail"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginVertical="@dimen/_8sdp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/materialButton3"
+            app:layout_constraintBottom_toTopOf="@+id/btn_callClient"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/materialCardView4" />

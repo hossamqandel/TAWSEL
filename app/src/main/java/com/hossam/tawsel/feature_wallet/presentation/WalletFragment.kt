@@ -1,4 +1,4 @@
-package com.hossam.tawsel.feature_profile.presentation.change_password
+package com.hossam.tawsel.feature_wallet.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,20 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hossam.tawsel.R
-import com.hossam.tawsel.databinding.FragmentChangePasswordBinding
+import com.hossam.tawsel.databinding.FragmentWalletBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChangePasswordFragment : Fragment() {
+class WalletFragment : Fragment() {
 
-    private var _binding: FragmentChangePasswordBinding? = null
+    private var _binding: FragmentWalletBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentChangePasswordBinding.inflate(inflater, container, false)
+        _binding = FragmentWalletBinding.inflate(inflater, container, false)
         return binding.root
     }
 

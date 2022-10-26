@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hossam.tawsel.R
 import com.hossam.tawsel.databinding.FragmentDriverOrderDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
 

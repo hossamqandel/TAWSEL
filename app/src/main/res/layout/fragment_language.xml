@@ -169,7 +169,6 @@
         android:fontFamily="@font/cairo_bold"
         android:textSize="@dimen/_12ssp"
         android:stateListAnimator="@null"
-
         app:cornerRadius="@dimen/_4sdp"
         android:layout_marginTop="@dimen/_15sdp"/>
 

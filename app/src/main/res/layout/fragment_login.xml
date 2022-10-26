@@ -51,7 +51,7 @@
         android:maxLines="1"
         android:fontFamily="@font/cairo_regular"
         android:hint="رقم الهاتف"
-        android:inputType="number"
+        android:inputType="phone"
         android:padding="@dimen/_8sdp"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"

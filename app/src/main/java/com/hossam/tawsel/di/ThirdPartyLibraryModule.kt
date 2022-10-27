@@ -5,7 +5,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.hossam.tawsel.core.Const
+import com.hossam.tawsel.core.DispatcherProvider
 import com.hossam.tawsel.core.SharedPref
+import com.hossam.tawsel.core.StandardDispatchers
 import com.hossam.tawsel.feature_main.data.remote.ITawselService
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
@@ -24,6 +26,12 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object ThirdPartyLibraryModule {
+
+    @Provides
+    @Singleton
+    fun provideDispatcherProvider(): DispatcherProvider {
+        return StandardDispatchers()
+    }
 
     @Provides
     @Singleton
@@ -69,4 +77,7 @@ object ThirdPartyLibraryModule {
         }
         return mRetrofit
     }
+
+
+
 }

@@ -13,6 +13,8 @@ fun OrderDetailsDto.toOrderDetails(): OrderDetails {
         phone = this.data.phone,
         addressDetails = this.data.address_details,
         shippingTax = this.data.shipping,
+        address = this.data.address ?: "",
+        reason = this.data.reasons,
         items = this.data.items.toItems()
     )
 }

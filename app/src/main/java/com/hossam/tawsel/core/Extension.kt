@@ -10,23 +10,26 @@ import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
+import android.util.TypedValue
 import android.view.View
+import android.view.ViewGroup
+import android.view.ViewGroup.MarginLayoutParams
 import android.view.Window
 import android.view.WindowManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.RequestManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.switchmaterial.SwitchMaterial
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.flow
-import retrofit2.HttpException
-import javax.inject.Inject
-import kotlin.reflect.KClass
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+
 
 private val TAG = "Extension"
 
@@ -66,6 +69,17 @@ fun EditText.onTextInputVisibilityChange(){
 
 }
 
+fun List<View>.goneAll(){
+    this.onEach {
+        it.visibility = View.GONE
+    }
+}
+
+fun List<View>.visibleAll(){
+    this.onEach {
+        it.visibility = View.VISIBLE
+    }
+}
 
 fun View.onClick(block: () -> Unit){
     this.setOnClickListener {
@@ -127,6 +141,36 @@ fun SwitchMaterial.changeTrackTint(resId: Int){
     } catch (e: Exception){
         Log.i(TAG, "changeTrackTint: $e")
         this.trackTintList = ColorStateList.valueOf(resId)
+    }
+}
+
+
+fun View.setMargins(
+    leftMarginDp: Int? = null,
+    topMarginDp: Int? = null,
+    rightMarginDp: Int? = null,
+    bottomMarginDp: Int? = null
+) {
+    if (layoutParams is ViewGroup.MarginLayoutParams) {
+        val params = layoutParams as ViewGroup.MarginLayoutParams
+        leftMarginDp?.run { params.leftMargin = this.dpToPx(context) }
+        topMarginDp?.run { params.topMargin = this.dpToPx(context) }
+        rightMarginDp?.run { params.rightMargin = this.dpToPx(context) }
+        bottomMarginDp?.run { params.bottomMargin = this.dpToPx(context) }
+        requestLayout()
+    }
+}
+
+fun Int.dpToPx(context: Context): Int {
+    val metrics = context.resources.displayMetrics
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.toFloat(), metrics).toInt()
+}
+
+fun <T> Fragment.collectLatestLifecycleFlow(flow: Flow<T>, collect: suspend (T) -> Unit){
+    lifecycleScope.launch {
+        repeatOnLifecycle(Lifecycle.State.STARTED){
+            flow.collectLatest(collect)
+        }
     }
 }
 

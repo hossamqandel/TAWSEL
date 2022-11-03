@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_6sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -23,16 +24,17 @@
         android:id="@+id/tv_clientInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_14sdp"
         android:fontFamily="@font/cairo_bold"
         android:text="بيانات العميل"
         android:textColor="@color/black"
+        android:visibility="gone"
+        tools:visibility="visible"
         android:textSize="@dimen/_15ssp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/tv_ClientTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_8sdp"
@@ -44,15 +46,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_clientInfo" />
 
 
-
     <TextView
-        android:id="@+id/tv_clientName"
+        android:id="@+id/tv_clientData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_3sdp"
         android:fontFamily="@font/cairo_regular"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ClientTitle"
         tools:text="إبراهيم خالد احمد" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

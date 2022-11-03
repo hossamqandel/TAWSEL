@@ -23,6 +23,8 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
         android:layout_marginTop="@dimen/_14sdp"
         android:fontFamily="@font/cairo_bold"
         android:text="تفاصيل الطلب"
@@ -32,12 +34,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/tv_products"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_8sdp"
         android:fontFamily="@font/cairo_bold"
         android:text="المنتجات"
+        android:visibility="gone"
+        tools:visibility="visible"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
@@ -52,7 +56,7 @@
         tools:text="بيتزا إيطالي - جبن"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_products" />
 
     <TextView
         android:id="@+id/tv_orderCost"
@@ -71,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_4sdp"
         android:fontFamily="@font/cairo_regular"
-        tools:text="السعر الكلي"
+        android:text="السعر الكلي"
         android:textSize="@dimen/_14ssp"
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
@@ -79,6 +83,7 @@
         tools:visibility="visible" />
 
     <TextView
+        android:id="@+id/tv_fullCostValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cairo_regular"
@@ -97,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_4sdp"
         android:fontFamily="@font/cairo_regular"
-        tools:text="خدمة التوصيل"
+        android:text="خدمة التوصيل"
         android:textSize="@dimen/_14ssp"
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
@@ -105,6 +110,7 @@
         tools:visibility="visible" />
 
     <TextView
+        android:id="@+id/tv_ShippingCostValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cairo_regular"
@@ -118,8 +124,11 @@
         tools:visibility="visible" />
 
     <View
+        android:id="@+id/line"
         android:layout_width="0dp"
         android:layout_height="1dp"
+        android:visibility="gone"
+        tools:visibility="visible"
         android:layout_marginTop="@dimen/_12sdp"
         app:layout_constraintTop_toBottomOf="@id/tv_deliveryCost"
         app:layout_constraintStart_toStartOf="@id/guidelineStart"

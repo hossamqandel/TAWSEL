@@ -7,7 +7,9 @@ data class OrderDetails(
     val client: String,
     val phone: String,
     val addressDetails: String,
+    val address: Any,
     val shippingTax: String,
+    val reason: Any,
     val items: List<Item>
 )
 

@@ -3,10 +3,10 @@ package com.hossam.tawsel.feature_order_details.data.remote.dto
 //client(name, phone, paymentType, address)
 //order(item, price, total, shipping, created at, address details)
 data class OrderDetailsDto(
-    val `data`: Data
+    val `data`: DataDto
 )
 
-data class Data(
+data class DataDto(
     val address: Any,
     val address_details: String,
     val city: Any,

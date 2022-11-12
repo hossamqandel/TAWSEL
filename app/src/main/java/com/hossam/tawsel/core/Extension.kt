@@ -112,6 +112,8 @@ fun RecyclerView.onScrolled(data: (recyclerView: RecyclerView, dx: Int, dy: Int)
         }
     })
 }
+
+
 fun View.showSnackBar(message: String){
     Snackbar.make(this, message, Snackbar.LENGTH_LONG).show()
 }
@@ -233,4 +235,5 @@ fun Fragment.popUpBackStackThenNavigateUp(){
     findNavController().popBackStack()
     findNavController().navigateUp()
 }
+
 

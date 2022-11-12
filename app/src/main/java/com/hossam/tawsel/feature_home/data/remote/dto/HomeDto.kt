@@ -1,12 +1,14 @@
 package com.hossam.tawsel.feature_home.data.remote.dto
 
-data class HomeDriverDto(
+data class HomeDto(
     val count: Int,
-    val current: Current,
-    val wallet: Int
+    val current: CurrentDto,
+    val wallet: Int,
+    val error: String? = null,
+    val message: String? = null,
 )
 
-data class Current(
+data class CurrentDto(
     val address: Any,
     val address_details: String,
     val city_id: Any,

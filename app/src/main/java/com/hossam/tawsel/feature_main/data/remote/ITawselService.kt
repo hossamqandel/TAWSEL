@@ -4,6 +4,7 @@ import com.hossam.tawsel.feature_auth.data.remote.dto.AuthenticationDto
 import com.hossam.tawsel.feature_auth.domain.model.Login
 import com.hossam.tawsel.feature_home.data.remote.dto.HomeDto
 import com.hossam.tawsel.feature_home.domain.model.Cancel
+import com.hossam.tawsel.feature_notification.data.remote.dto.NotificationsDto
 import com.hossam.tawsel.feature_order_details.data.remote.dto.OrderDetailsDto
 import com.hossam.tawsel.feature_orders.domain.model.OrdersDto
 import com.hossam.tawsel.feature_profile.data.remote.dto.ProfileDto
@@ -56,6 +57,9 @@ interface ITawselService {
     @GET("driver/orders")
     suspend fun getOrders(): OrdersDto
 
+    @GET("driver/notifications")
+    suspend fun getNotifications(): NotificationsDto
+
 
 //    @GET("driver/start/{driver_id}")
 //    suspend fun startOrderByDriverId(@Path("driver_id") driverId: String): HomeDto
@@ -63,7 +67,5 @@ interface ITawselService {
 //    suspend fun cancelOrderByDriverId(@Path("driver_id") driverId: String): HomeDto
 
 //    suspend fun completeOrderByDriverId(@Path("driver_id") driverId: String): HomeDto
-
-
 
 }

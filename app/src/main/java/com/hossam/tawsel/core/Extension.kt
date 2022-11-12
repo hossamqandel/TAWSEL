@@ -18,12 +18,19 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.addCallback
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.navigateUp
+import androidx.recyclerview.widget.RecyclerView
+import com.facebook.shimmer.Shimmer
+import com.facebook.shimmer.ShimmerFrameLayout
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.switchmaterial.SwitchMaterial
 import kotlinx.coroutines.flow.Flow
@@ -40,6 +47,17 @@ fun handler(timer: Long, block: () -> Unit){
 }
 
 
+fun ShimmerFrameLayout.visibilityState(isVisible: Boolean){
+    when(isVisible){
+        true -> {
+            this.isVisible = isVisible
+            this.startShimmer()
+        }
+        else -> {
+            this.isVisible = isVisible
+            this.stopShimmer() }
+    }
+}
 infix fun EditText.onTextChanged(onTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
@@ -87,6 +105,13 @@ fun View.onClick(block: () -> Unit){
     }
 }
 
+fun RecyclerView.onScrolled(data: (recyclerView: RecyclerView, dx: Int, dy: Int) -> Unit){
+    this.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+            data(recyclerView, dx, dy)
+        }
+    })
+}
 fun View.showSnackBar(message: String){
     Snackbar.make(this, message, Snackbar.LENGTH_LONG).show()
 }
@@ -188,4 +213,24 @@ fun <T> Fragment.collectLatestLifecycleFlow(flow: Flow<T>, collect: suspend (T) 
 //     }
 //
 //}
+
+fun BottomSheetDialog.showHideBottomSheetDialog(isVisible: Boolean){
+    when(isVisible){
+        true -> this.show()
+        else -> this.dismiss()
+    }
+}
+
+infix fun Fragment.handleOnBackPressed(block: () -> Unit){
+    activity?.let {
+        it.onBackPressedDispatcher.addCallback {
+            block()
+        }
+    }
+}
+
+fun Fragment.popUpBackStackThenNavigateUp(){
+    findNavController().popBackStack()
+    findNavController().navigateUp()
+}
 

@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.hossam.tawsel.R
 import com.hossam.tawsel.core.*
+import com.hossam.tawsel.core.base.BaseFragment
 import com.hossam.tawsel.databinding.FragmentNotificationsBinding
 import com.hossam.tawsel.feature_notification.data.remote.dto.NotificationsDataDto
 import com.hossam.tawsel.feature_notification.data.remote.dto.NotificationsDto
@@ -20,20 +21,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
-class NotificationsFragment : Fragment() {
+class NotificationsFragment : BaseFragment<FragmentNotificationsBinding>(
+    FragmentNotificationsBinding::inflate
+) {
 
-    private var _binding: FragmentNotificationsBinding? = null
-    private val binding get() = _binding!!
     private val viewModel: NotificationsViewModel by viewModels()
     private val mAdapter by lazy { NotificationsAdapter() }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -47,20 +40,16 @@ class NotificationsFragment : Fragment() {
     private fun backToHome() {
         handleOnBackPressed {
             popUpBackStackThenNavigateUp()
+//            findNavController().popBackStack()
+            findNavController().navigateUp()
         }
     }
 
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
     private fun onClicks(){
         binding.apply {
             btnBack.onClick {
-                findNavController().popBackStack()
-                findNavController().navigateUp()
+//                popUpBackStackThenNavigateUp()
             }
         }
     }

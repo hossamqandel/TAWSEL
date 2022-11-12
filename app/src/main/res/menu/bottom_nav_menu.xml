@@ -4,17 +4,22 @@
     <item
         android:id="@+id/driverHomeFragment"
         android:icon="@drawable/ic_bottom_nav_home"
-        android:title="Home" />
+        android:title="Home"
+        android:menuCategory="secondary"/>
+
+    <item
+        android:id="@+id/ordersFragment"
+        android:icon="@drawable/ic_bottom_nav_wallet"
+        android:title="Orders"
+        android:menuCategory="secondary"/>
     <item
         android:id="@+id/walletFragment"
-        android:icon="@drawable/ic_bottom_nav_wallet"
-        android:title="Wallet" />
-    <item
-        android:id="@+id/changePasswordFragment"
         android:icon="@drawable/ic_lock"
-        android:title="Change Password" />
+        android:title="Wallet"
+        android:menuCategory="secondary"/>
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_bottom_nav_profile"
-        android:title="Profile" />
+        android:title="Profile"
+        android:menuCategory="secondary"/>
 </menu>

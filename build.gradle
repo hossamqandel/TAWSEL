@@ -7,6 +7,8 @@ buildscript {
 
         def daggerHilt_Version = "2.44"
         classpath("com.google.dagger:hilt-android-gradle-plugin:$daggerHilt_Version")
+
+        classpath 'com.google.gms:google-services:4.3.13'
     }
 }
 

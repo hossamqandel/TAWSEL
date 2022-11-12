@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs.kotlin")
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -54,6 +55,23 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.1.0'
+
+
+    //Maps
+    implementation 'com.google.maps.android:maps-utils-ktx:3.4.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.0'
+
+    //WorkManager
+    def work_version = "2.7.1"
+    // Kotlin + coroutines
+    implementation("androidx.work:work-runtime-ktx:$work_version")
+    // optional - GCMNetworkManager support
+    implementation("androidx.work:work-gcm:$work_version")
 
 
     def nav_version = "2.5.1"
@@ -127,6 +145,9 @@ dependencies {
 
     //Switch Button
     implementation 'com.kyleduo.switchbutton:library:2.1.0'
+
+    //Shimmer for loading state
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
 
 

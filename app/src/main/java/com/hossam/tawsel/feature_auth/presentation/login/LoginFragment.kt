@@ -8,28 +8,19 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.hossam.tawsel.core.UiEvent
+import com.hossam.tawsel.core.base.BaseFragment
+import com.hossam.tawsel.core.navigate
 import com.hossam.tawsel.core.onClick
 import com.hossam.tawsel.core.showSnackBar
 import com.hossam.tawsel.databinding.FragmentLoginBinding
 import com.hossam.tawsel.feature_auth.domain.model.Login
 import com.hossam.tawsel.feature_auth.presentation.util.AuthEvent
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
-class LoginFragment : Fragment() {
+class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
     private val viewModel: LoginViewModel by viewModels()
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,10 +29,6 @@ class LoginFragment : Fragment() {
         collectUiEvents()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
     private fun onClicks(){
         binding.apply {
@@ -50,6 +37,10 @@ class LoginFragment : Fragment() {
                 val mPassword = etPass.text.toString()
                 viewModel.onEvent(AuthEvent.MakeLogin(Login(mPhone, mPassword)))
             }
+
+            tvForgetPass.onClick {
+                viewModel.onEvent(AuthEvent.ForgetPassword)
+            }
         }
     }
 
@@ -57,9 +48,10 @@ class LoginFragment : Fragment() {
         lifecycleScope.launchWhenStarted {
             viewModel.uiChannel.collect { uiEvent ->
                 when(uiEvent){
-                    is UiEvent.SnackBar -> binding.btnLogin.showSnackBar(uiEvent.message)
-                    is UiEvent.Navigate -> {}
+                    is UiEvent.ShowSnackBar -> binding.btnLogin.showSnackBar(uiEvent.message)
+                    is UiEvent.Navigate -> { navigate(uiEvent.destination) }
                     is UiEvent.ProgressBar -> {}
+                    is UiEvent.Shimmer -> {}
                 }
             }
         }

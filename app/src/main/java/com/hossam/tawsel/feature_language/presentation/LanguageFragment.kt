@@ -5,33 +5,48 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.hossam.tawsel.R
+import com.hossam.tawsel.core.Nav
+import com.hossam.tawsel.core.SharedPref
+import com.hossam.tawsel.core.base.BaseFragment
+import com.hossam.tawsel.core.navigate
+import com.hossam.tawsel.core.onClick
 import com.hossam.tawsel.databinding.FragmentLanguageBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LanguageFragment : Fragment() {
+class LanguageFragment : BaseFragment<FragmentLanguageBinding>(FragmentLanguageBinding::inflate) {
 
-    private var _binding: FragmentLanguageBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentLanguageBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    private var isArabic = true
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        onClicks()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun onClicks(){
+        binding.apply {
+
+            cvArabic.onClick {
+                SharedPref.setUserLanguage(isArabic)
+                ivRbAr.setImageResource(R.drawable.ic_checked)
+                ivRbEng.setImageResource(R.drawable.ic_unchecked)
+            }
+
+            cvEnglish.onClick {
+                SharedPref.setUserLanguage(!isArabic)
+                ivRbEng.setImageResource(R.drawable.ic_checked)
+                ivRbAr.setImageResource(R.drawable.ic_unchecked)
+            }
+
+            btnNext.onClick {
+                navigate(Nav.LANGUAGE_TO_LOGIN)
+            }
+        }
     }
+
+
 
 
 

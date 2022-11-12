@@ -12,8 +12,10 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.hossam.tawsel.core.*
+import com.hossam.tawsel.core.base.BaseFragment
 import com.hossam.tawsel.databinding.FragmentDriverOrderDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -21,38 +23,20 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class DriverOrderDetailsFragment : Fragment() {
+class DriverOrderDetailsFragment : BaseFragment<FragmentDriverOrderDetailsBinding>(FragmentDriverOrderDetailsBinding::inflate) {
 
     private val CALL_REQUEST_CODE by lazy { 20 }
-    private var _binding: FragmentDriverOrderDetailsBinding? = null
-    private val binding get() = _binding!!
     private val viewModel: OrderDetailsViewModel by viewModels()
     private val mOrderDetailsAdapter by lazy { OrderDetailsAdapter() }
     private val mClientInfoAdapter by lazy { ClientInfoAdapter() }
     @Inject lateinit var glide: RequestManager
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentDriverOrderDetailsBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         onClicks()
         stateCollector()
         uiCollector()
-
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 
     private fun onClicks(){
         binding.apply {
@@ -97,6 +81,7 @@ class DriverOrderDetailsFragment : Fragment() {
                     is UiEvent.Navigate -> {}
                     is UiEvent.ProgressBar -> {}
                     is UiEvent.ShowSnackBar -> tvOrderLocation.showSnackBar(event.message)
+                    is UiEvent.Shimmer -> {}
                 }
             }
         }

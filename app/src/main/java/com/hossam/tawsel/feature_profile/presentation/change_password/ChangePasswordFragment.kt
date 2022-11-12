@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.hossam.tawsel.core.*
+import com.hossam.tawsel.core.base.BaseFragment
 import com.hossam.tawsel.databinding.FragmentChangePasswordBinding
 import com.hossam.tawsel.feature_profile.domain.model.UpdatePassword
 import com.hossam.tawsel.feature_profile.presentation.profile.ProfileEvent
@@ -15,21 +16,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
-class ChangePasswordFragment : Fragment() {
+class ChangePasswordFragment : BaseFragment<FragmentChangePasswordBinding>(FragmentChangePasswordBinding::inflate) {
 
-    private var _binding: FragmentChangePasswordBinding? = null
-    private val binding get() = _binding!!
     private val viewModel: ChangePasswordViewModel by viewModels()
     private var isPassTextInputVisible = false
     private var isPassConfirmationTextInputVisible = false
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentChangePasswordBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,11 +28,6 @@ class ChangePasswordFragment : Fragment() {
         onClicks()
         collectUiEvents()
 
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun onClicks(){
@@ -76,6 +62,7 @@ class ChangePasswordFragment : Fragment() {
                             val clearAll = listOf(etNewPass,etNewPassConfirm)
                                 clearAll.apply { this.onEach { it.text.clear() } }
                         }
+                        is UiEvent.Shimmer -> {}
                     }
                 }
             }

@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class GetHomeUseCase @Inject constructor(
+class GetHomeUseCase (
   private val repo: IHomeRepository
 ) {
 

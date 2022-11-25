@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class GetOrderDetailsUseCase @Inject constructor(
+class GetOrderDetailsUseCase (
     private val repo: IOrderDetailsRepository
 ) {
 

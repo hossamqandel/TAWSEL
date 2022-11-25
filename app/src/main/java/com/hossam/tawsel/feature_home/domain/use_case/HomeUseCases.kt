@@ -5,5 +5,4 @@ data class HomeUseCases(
     val startOrderUseCase: StartOrderUseCase,
     val cancelOrderUseCase: CancelOrderUseCase,
     val completeOrderUseCase: CompleteOrderUseCase
-
 )

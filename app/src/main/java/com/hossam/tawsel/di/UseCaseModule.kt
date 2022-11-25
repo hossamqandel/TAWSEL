@@ -19,6 +19,8 @@ import com.hossam.tawsel.feature_profile.domain.use_case.GetProfileUseCase
 import com.hossam.tawsel.feature_profile.domain.use_case.ProfileUseCases
 import com.hossam.tawsel.feature_profile.domain.use_case.UpdatePasswordUseCase
 import com.hossam.tawsel.feature_profile.domain.use_case.UpdateProfileUseCase
+import com.hossam.tawsel.feature_wallet.domain.repository.IWalletRepository
+import com.hossam.tawsel.feature_wallet.domain.use_case.GetWalletUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,29 +45,29 @@ object UseCaseModule {
     }
 
 
-    @Provides
-    @Singleton
-    fun provideGetHomeUseCase(repo: IHomeRepository): GetHomeUseCase {
-        return GetHomeUseCase(repo)
-    }
-
-    @Provides
-    @Singleton
-    fun provideStartOrderUseCase(repo: IHomeRepository): StartOrderUseCase {
-        return StartOrderUseCase(repo)
-    }
-
-    @Provides
-    @Singleton
-    fun provideCancelOrderUseCase(repo: IHomeRepository): CancelOrderUseCase {
-        return CancelOrderUseCase(repo)
-    }
-
-    @Provides
-    @Singleton
-    fun provideCompleteOrderUseCase(repo: IHomeRepository): CompleteOrderUseCase {
-        return CompleteOrderUseCase(repo)
-    }
+//    @Provides
+//    @Singleton
+//    fun provideGetHomeUseCase(repo: IHomeRepository): GetHomeUseCase {
+//        return GetHomeUseCase(repo)
+//    }
+//
+//    @Provides
+//    @Singleton
+//    fun provideStartOrderUseCase(repo: IHomeRepository): StartOrderUseCase {
+//        return StartOrderUseCase(repo)
+//    }
+//
+//    @Provides
+//    @Singleton
+//    fun provideCancelOrderUseCase(repo: IHomeRepository): CancelOrderUseCase {
+//        return CancelOrderUseCase(repo)
+//    }
+//
+//    @Provides
+//    @Singleton
+//    fun provideCompleteOrderUseCase(repo: IHomeRepository): CompleteOrderUseCase {
+//        return CompleteOrderUseCase(repo)
+//    }
 
     @Provides
     @Singleton
@@ -88,23 +90,23 @@ object UseCaseModule {
         )
     }
 
-    @Provides
-    @Singleton
-    fun provideGetProfileUseCase(repo: IProfileRepository): GetProfileUseCase {
-        return GetProfileUseCase(repo)
-    }
-
-    @Provides
-    @Singleton
-    fun provideUpdateProfileUseCase(repo: IProfileRepository): UpdateProfileUseCase {
-        return UpdateProfileUseCase(repo)
-    }
-
-    @Provides
-    @Singleton
-    fun provideUpdatePasswordUseCase(repo: IProfileRepository): UpdatePasswordUseCase {
-        return UpdatePasswordUseCase(repo)
-    }
+//    @Provides
+//    @Singleton
+//    fun provideGetProfileUseCase(repo: IProfileRepository): GetProfileUseCase {
+//        return GetProfileUseCase(repo)
+//    }
+//
+//    @Provides
+//    @Singleton
+//    fun provideUpdateProfileUseCase(repo: IProfileRepository): UpdateProfileUseCase {
+//        return UpdateProfileUseCase(repo)
+//    }
+//
+//    @Provides
+//    @Singleton
+//    fun provideUpdatePasswordUseCase(repo: IProfileRepository): UpdatePasswordUseCase {
+//        return UpdatePasswordUseCase(repo)
+//    }
 
 
     @Provides
@@ -117,11 +119,11 @@ object UseCaseModule {
         )
     }
 
-    @Provides
-    @Singleton
-    fun provideGetOrderDetailsUseCase(repo: IOrderDetailsRepository): GetOrderDetailsUseCase {
-        return GetOrderDetailsUseCase(repo)
-    }
+//    @Provides
+//    @Singleton
+//    fun provideGetOrderDetailsUseCase(repo: IOrderDetailsRepository): GetOrderDetailsUseCase {
+//        return GetOrderDetailsUseCase(repo)
+//    }
 
     @Provides
     @Singleton
@@ -129,17 +131,23 @@ object UseCaseModule {
         return GetOrdersUseCase(repo)
     }
 
-    @Provides
-    @Singleton
-    fun provideNotificationsUseCase(repo: INotificationRepository): GetNotificationsUseCase {
-        return GetNotificationsUseCase(repo)
-    }
+//    @Provides
+//    @Singleton
+//    fun provideNotificationsUseCase(repo: INotificationRepository): GetNotificationsUseCase {
+//        return GetNotificationsUseCase(repo)
+//    }
 
     @Provides
     @Singleton
     fun provideNotificationUseCases(repo: INotificationRepository): NotificationUseCases {
         return NotificationUseCases(
-            GetNotificationsUseCase(repo)
+           getNotificationsUseCase =  GetNotificationsUseCase(repo)
         )
+    }
+
+
+    @Provides
+    fun provideGetWalletUseCase(repo: IWalletRepository): GetWalletUseCase {
+        return GetWalletUseCase(repo)
     }
 }

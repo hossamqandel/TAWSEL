@@ -7,7 +7,7 @@ import com.hossam.tawsel.feature_main.data.remote.ITawselService
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class StartOrderUseCase @Inject constructor(
+class StartOrderUseCase (
     private val repo: IHomeRepository
 ) {
 

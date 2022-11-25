@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class UpdatePasswordUseCase @Inject constructor(
+class UpdatePasswordUseCase (
     private val repo: IProfileRepository
 ) {
 

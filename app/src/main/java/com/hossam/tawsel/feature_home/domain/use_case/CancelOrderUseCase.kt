@@ -6,7 +6,7 @@ import com.hossam.tawsel.feature_home.domain.repository.IHomeRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class CancelOrderUseCase @Inject constructor(
+class CancelOrderUseCase (
     private val repo: IHomeRepository
 ) {
 

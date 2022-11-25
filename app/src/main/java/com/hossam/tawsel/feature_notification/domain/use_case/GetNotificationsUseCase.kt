@@ -6,7 +6,7 @@ import com.hossam.tawsel.feature_notification.domain.repository.INotificationRep
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetNotificationsUseCase @Inject constructor(
+class GetNotificationsUseCase (
     private val repo: INotificationRepository
 ) {
 

@@ -29,7 +29,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14ssp"
-                tools:text="كل الطلبات" />
+                tools:text="All orders" />
         </FrameLayout>
 
     </com.google.android.material.card.MaterialCardView>

@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_6sdp"
         android:fontFamily="@font/cairo_regular"
-        android:text="الإشعارات"
+        android:text="@string/notifications"
         android:textColor="@color/black"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_Back"

@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">TAWSEL</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="google_maps_api_key" translatable="false">AIzaSyB71E7Pcg9coPz4rvrWdtCMAqI1gC71pLk</string>
 
     <string name="all_orders">All Orders</string>
     <string name="new_orders">New orders</string>
@@ -9,6 +10,58 @@
     <string name="expired_orders">Expired orders</string>
 
 
-    <string name="google_maps_api_key">AIzaSyB71E7Pcg9coPz4rvrWdtCMAqI1gC71pLk</string>
+    <string name="login">Log in</string>
+    <string name="forget_password">Forgotten password?</string>
+    <string name="log_in">Log in</string>
+    <string name="log_in_to_continue">Log in to continue</string>
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="work_status">Work status</string>
+    <string name="not_connected">Offline</string>
+    <string name="connected">Online now</string>
+    <string name="current_location">Current location</string>
+    <string name="show_order_details">Show order details</string>
+    <string name="cancel_order">Cancel order</string>
+    <string name="number_of_orders">Number of orders</string>
+    <string name="dues_required">Dues required</string>
+    <string name="finish_order">Finish order</string>
+    <string name="full_amount">Full amount:</string>
+    <string name="order_number">Order number #</string>
+    <string name="order_details">Order details</string>
+    <string name="products">Products</string>
+    <string name="total_cost">Total cost</string>
+    <string name="delivery_service">Delivery service</string>
+    <string name="egp">egp</string>
+    <string name="start_order">Start order</string>
+    <string name="show_details">Show details</string>
+    <string name="customer_data">Customer data</string>
+    <string name="customer_name">Customer name</string>
+    <string name="last_maturity">Last maturity</string>
+    <string name="last_dealings">Last dealings</string>
+    <string name="the_customer_rejected_the_order">The customer rejected the order</string>
+    <string name="the_order_is_damaged">The order is damaged</string>
+    <string name="another_reason">Another reason</string>
+    <string name="leave_your_message_here">Leave your message here…</string>
+    <string name="send">Send</string>
+    <string name="reason_for_cancellation">Reason for cancellation</string>
+    <string name="change_the_password">Change the password</string>
+    <string name="save_changes">Save changes</string>
+    <string name="old_password">Old password</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_the_new_password">Confirm the new password</string>
+    <string name="order_Details">Order Details</string>
+    <string name="call_the_customer">Call the customer</string>
+    <string name="choose_language">Choose language</string>
+    <string name="choose_the_language_that_suits_you_best_for_a_better_experience_within_the_application">Choose the language that suits you best for a better experience within the application</string>
+    <string name="english">English</string>
+    <string name="next">Next</string>
+    <string name="arabic">العربية</string>
+    <string name="sign_out">Sign out</string>
+    <string name="full_name">Full name</string>
+    <string name="address">Address</string>
+    <string name="change_password">Change password</string>
+    <string name="not_completed">Not completed</string>
+    <string name="completed">Completed</string>
+    <string name="notifications">Notifications</string>
 
 </resources>

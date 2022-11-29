@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">توصيل</string>
+
+    <string name="all_orders">كل الطلبات</string>
+    <string name="new_orders">الطلبات الجديده</string>
+    <string name="current_orders">الطلبات الحالية</string>
+    <string name="expired_orders">الطلبات المنتهية</string>
+
+    <string name="login">تسجيل دخول</string>
+    <string name="forget_password">نسيت كلمة السر؟</string>
+    <string name="log_in">تسجيل الدخول</string>
+    <string name="log_in_to_continue">قم بتسجيل الدخول للمتابعه</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="password">كلمة المرور</string>
+    <string name="work_status">حالة العمل</string>
+    <string name="not_connected">غير متصل</string>
+    <string name="connected">متصل الأن</string>
+    <string name="current_location">المكان الحالي</string>
+    <string name="show_order_details">عرض تفاصيل الطلب</string>
+    <string name="cancel_order">الغاء الطلب</string>
+    <string name="number_of_orders">عدد الطلبات</string>
+    <string name="dues_required">المستحقات المطلوبة</string>
+    <string name="finish_order">انهاء الطلب</string>
+    <string name="full_amount">الإجمالي:</string>
+    <string name="order_number">رقم الطلب #</string>
+    <string name="order_details">تفاصيل الطلب</string>
+    <string name="products">المنتجات</string>
+    <string name="total_cost">الاجمالي</string>
+    <string name="delivery_service">خدمة التوصيل</string>
+    <string name="egp">ج.م</string>
+    <string name="start_order">بدأ الطلب</string>
+    <string name="show_details">عرض التفاصيل</string>
+    <string name="customer_data">بيانات العميل</string>
+    <string name="customer_name">اسم العميل</string>
+    <string name="last_maturity">الاستحقاق الاخير</string>
+    <string name="last_dealings">اخر العمليات</string>
+    <string name="the_customer_rejected_the_order">العميل رفض الطلب</string>
+    <string name="the_order_is_damaged">الطلب تالف</string>
+    <string name="another_reason">سبب أخر</string>
+    <string name="leave_your_message_here">اترك رسالتك هنا…</string>
+    <string name="send">ارسال</string>
+    <string name="reason_for_cancellation">سبب الإلغاء</string>
+    <string name="change_the_password">تغيير الرقم السري</string>
+    <string name="save_changes">حفظ التغييرات</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+    <string name="new_password">كلمة المرور الجديدة</string>
+    <string name="confirm_the_new_password">تأكيد كلمة المرور الجديدة</string>
+    <string name="order_Details">تفاصيل الطلب</string>
+    <string name="call_the_customer">اتصل بالعميل</string>
+    <string name="choose_language">اختر اللغه</string>
+    <string name="choose_the_language_that_suits_you_best_for_a_better_experience_within_the_application">قم باختيار اللغة التي تناسبك لتجربة أفضل داخل التطبيق</string>
+    <string name="english">English</string>
+    <string name="next">التالي</string>
+    <string name="arabic">العربية</string>
+    <string name="sign_out">تسجيل الخروج</string>
+    <string name="full_name">الإسم بالكامل</string>
+    <string name="address">العنوان</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="not_completed">لم يكتمل</string>
+    <string name="completed">مكتمل</string>
+    <string name="notifications">الإشعارات</string>
+
+
+</resources>

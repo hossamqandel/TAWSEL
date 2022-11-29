@@ -52,17 +52,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_new_notification"
-            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/btn_Logout"
-            android:layout_width="@dimen/_142sdp"
+            android:layout_width="@dimen/_125sdp"
             android:layout_height="@dimen/_38sdp"
             app:cardCornerRadius="@dimen/_16sdp"
             app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_Notification"
-            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
             app:layout_constraintTop_toTopOf="@+id/guidelineTop">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -78,13 +78,15 @@
                     android:src="@drawable/ic_sign_out"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView12"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/cairo_semibold"
-                    android:text="تسجيل الخروج"
+                    android:text="@string/sign_out"
                     android:textColor="@color/lust"
                     android:textSize="@dimen/_13ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView17"
@@ -165,10 +167,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12sdp"
                         android:fontFamily="@font/cairo_semibold"
-                        android:text="الإسم بالكامل"
+                        android:text="@string/full_name"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_13ssp"
-                        app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineInnerStart"
                         app:layout_constraintTop_toBottomOf="@+id/tv_driverName" />
 
                     <EditText
@@ -180,7 +182,8 @@
                         android:elevation="2dp"
                         android:paddingHorizontal="@dimen/_12sdp"
                         android:paddingVertical="@dimen/_10sdp"
-                        android:text="محمد شادي"
+                        tools:text="محمد شادي"
+                        android:textAlignment="viewStart"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
                         app:layout_constraintStart_toStartOf="@+id/guidelineInnerStart"
                         app:layout_constraintTop_toBottomOf="@+id/textView29" />
@@ -192,10 +195,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12sdp"
                         android:fontFamily="@font/cairo_semibold"
-                        android:text="رقم الهاتف"
+                        android:text="@string/phone_number"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_13ssp"
-                        app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineInnerStart"
                         app:layout_constraintTop_toBottomOf="@+id/et_fullName" />
 
                     <EditText
@@ -209,7 +212,7 @@
                         android:paddingHorizontal="@dimen/_12sdp"
                         android:paddingVertical="@dimen/_10sdp"
                         tools:text="01114821215"
-                        android:textAlignment="viewEnd"
+                        android:textAlignment="viewStart"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
                         app:layout_constraintStart_toStartOf="@+id/guidelineInnerStart"
                         app:layout_constraintTop_toBottomOf="@+id/textView40" />
@@ -221,10 +224,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12sdp"
                         android:fontFamily="@font/cairo_semibold"
-                        android:text="العنوان"
+                        android:text="@string/address"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_13ssp"
-                        app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineInnerStart"
                         app:layout_constraintTop_toBottomOf="@+id/et_phoneNum" />
 
                     <EditText
@@ -236,8 +239,8 @@
                         android:elevation="2dp"
                         android:paddingHorizontal="@dimen/_12sdp"
                         android:paddingVertical="@dimen/_10sdp"
-                        android:text="شارع 10 - باب الشعرية - القاهره"
-                        android:textAlignment="viewEnd"
+                        tools:text="شارع 10 - باب الشعرية - القاهره"
+                        android:textAlignment="viewStart"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
                         app:layout_constraintStart_toStartOf="@+id/guidelineInnerStart"
                         app:layout_constraintTop_toBottomOf="@+id/textView44" />
@@ -245,11 +248,11 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_12sdp"
                         android:elevation="2dp"
+                        android:layout_marginEnd="@dimen/_12sdp"
                         android:src="@drawable/ic_location_grey"
                         app:layout_constraintBottom_toBottomOf="@+id/et_address"
-                        app:layout_constraintStart_toStartOf="@+id/et_address"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
                         app:layout_constraintTop_toTopOf="@+id/et_address" />
 
                     <com.google.android.material.button.MaterialButton
@@ -260,9 +263,10 @@
                         android:backgroundTint="@color/green_crayola"
                         android:fontFamily="@font/cairo_semibold"
                         android:stateListAnimator="@null"
-                        android:text="حفظ التغييرات"
+                        android:text="@string/save_changes"
                         android:textSize="@dimen/_14ssp"
                         app:cornerRadius="6dp"
+                        android:textAllCaps="false"
                         app:layout_constraintEnd_toStartOf="@+id/guidelineInnerEnd"
                         app:layout_constraintStart_toStartOf="@+id/guidelineInnerStart"
                         app:layout_constraintTop_toBottomOf="@+id/et_address" />
@@ -275,10 +279,11 @@
                         android:backgroundTint="@color/light_silver"
                         android:fontFamily="@font/cairo_semibold"
                         android:stateListAnimator="@null"
-                        tools:text="تغيير الرقم السري"
+                        android:text="@string/change_password"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14ssp"
                         app:cornerRadius="6dp"
+                        android:textAllCaps="false"
                         app:icon="@drawable/ic_lock"
                         app:iconGravity="textEnd"
                         app:iconPadding="@dimen/_8sdp"

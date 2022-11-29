@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="@dimen/_16sdp"
@@ -34,7 +35,7 @@
         android:fontFamily="@font/cairo_bold"
         android:gravity="center_horizontal"
         android:paddingVertical="@dimen/_2sdp"
-        android:text="سبب الإلغاء"
+        android:text="@string/reason_for_cancellation"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
@@ -71,20 +72,20 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_unchecked"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_Canceled"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
                 android:fontFamily="@font/cairo_regular"
-                android:text="العميل رفض الطلب"
+                android:text="@string/the_customer_rejected_the_order"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/iv_Canceled"
+                app:layout_constraintStart_toEndOf="@+id/iv_Canceled"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -110,20 +111,20 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_unchecked"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_Damaged"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_8sdp"
                 android:fontFamily="@font/cairo_regular"
-                android:text="الطلب طالف"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/the_order_is_damaged"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/iv_Damaged"
+                app:layout_constraintStart_toEndOf="@+id/iv_Damaged"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -134,20 +135,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_12sdp"
         android:src="@drawable/ic_unchecked"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/btn_OrderDamaged" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_8sdp"
         android:fontFamily="@font/cairo_regular"
-        android:text="سبب أخر"
+        android:text="@string/another_reason"
         android:textColor="@color/black"
         android:textSize="@dimen/_14ssp"
+        android:layout_marginStart="@dimen/_8sdp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_OtherReason"
-        app:layout_constraintEnd_toStartOf="@+id/btn_OtherReason"
+        app:layout_constraintStart_toEndOf="@+id/btn_OtherReason"
         app:layout_constraintTop_toTopOf="@+id/btn_OtherReason" />
 
     <com.google.android.material.card.MaterialCardView
@@ -171,7 +172,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:hint="اترك رسالتك هنا ..."
+                android:hint="@string/leave_your_message_here"
                 android:maxLines="8"
                 android:inputType="textMultiLine"
                 android:paddingVertical="@dimen/_10sdp"
@@ -191,7 +192,8 @@
         android:paddingVertical="@dimen/_6sdp"
         android:backgroundTint="@color/orange"
         android:fontFamily="@font/cairo_bold"
-        android:text="ارسال"
+        android:text="@string/send"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"

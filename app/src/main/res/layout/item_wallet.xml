@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/_8sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/itemWallet_tvLastOperations"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/cairo_semibold"-->
+<!--        android:text="اخر العمليات"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="@dimen/_14ssp"-->
+<!--        android:visibility="gone"-->
+<!--        tools:visibility="visible"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--         />-->
+
+    <TextView
+        android:id="@+id/itemWallet_tvOrderNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cairo_semibold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:text="@string/order_number"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Order number #4521" />
+
+
+    <TextView
+        android:id="@+id/itemWallet_tvOrderDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:fontFamily="@font/cairo_regular"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/itemWallet_tvOrderNum"
+        tools:text="03.10.2020" />
+
+    <TextView
+        android:id="@+id/itemWallet_tvOrderAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cairo_semibold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemWallet_tvOrderNum"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintTop_toTopOf="@+id/itemWallet_tvOrderNum"
+        tools:text="+40" />
+
+    <View
+        android:id="@+id/itemWallet_splitLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@color/dark_silver"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/itemWallet_tvOrderDate"
+        tools:visibility="visible" />
+
+
+    <View
+        android:id="@+id/itemWallet_splitDottedLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/dotted"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/itemWallet_tvOrderDate"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/itemWallet_tvFull"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/cairo_bold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/itemWallet_splitDottedLine"
+        android:text="@string/full_amount" />
+
+    <TextView
+        android:id="@+id/itemWallet_tvFullAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cairo_bold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintTop_toTopOf="@+id/itemWallet_tvFull"
+        tools:text="1500" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

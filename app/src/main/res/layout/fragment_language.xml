@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="117dp" />
+        app:layout_constraintGuide_begin="100dp" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_38sdp"
         android:fontFamily="@font/cairo_bold"
-        android:text="اختر اللغه"
+        android:text="@string/choose_language"
         android:textColor="@color/black"
         android:textSize="@dimen/_16ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_2sdp"
         android:fontFamily="@font/cairo_regular"
-        android:text="قم باختيار اللغة التي تناسبك لتجربة أفضل داخل التطبيق"
+        android:gravity="center_horizontal"
+        android:text="@string/choose_the_language_that_suits_you_best_for_a_better_experience_within_the_application"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cairo_regular"
-                android:text="العربية"
+                android:text="@string/arabic"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -144,7 +145,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cairo_regular"
-                android:text="الانجليزية"
+                android:text="@string/english"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -165,9 +166,10 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/cvArabic"
         android:backgroundTint="@color/orange"
-        android:text="التالي"
+        android:text="@string/next"
         android:fontFamily="@font/cairo_bold"
         android:textSize="@dimen/_12ssp"
+        android:textAllCaps="false"
         android:stateListAnimator="@null"
         app:cornerRadius="@dimen/_4sdp"
         android:layout_marginTop="@dimen/_15sdp"/>

@@ -27,31 +27,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cairo_bold"
-                tools:text="لم يكتمل"
                 android:textColor="@color/lust"
                 android:textSize="@dimen/_12ssp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/not_completed" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_restaurantLogo"
                 android:layout_width="49dp"
                 android:layout_height="49dp"
-                tools:src="@drawable/person"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/person" />
 
             <TextView
                 android:id="@+id/tv_restaurantName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_marginStart="@dimen/_6sdp"
                 android:fontFamily="@font/cairo_regular"
-                tools:text="كريسبي و كرانشي"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14ssp"
-                app:layout_constraintEnd_toStartOf="@+id/iv_restaurantLogo"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/iv_restaurantLogo"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="كريسبي و كرانشي" />
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -59,20 +59,20 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_location_grey"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_restaurantLogo"
-                app:layout_constraintEnd_toEndOf="@+id/tv_restaurantName"
+                app:layout_constraintStart_toEndOf="@+id/iv_restaurantLogo"
                 app:layout_constraintTop_toBottomOf="@+id/tv_restaurantName" />
 
             <TextView
                 android:id="@+id/tv_CurrentLocation2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_2sdp"
                 android:fontFamily="@font/cairo_regular"
-                tools:text="شارع 10 - باب الشعرية - القاهره"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-                app:layout_constraintEnd_toStartOf="@+id/imageView7"
-                app:layout_constraintTop_toTopOf="@+id/imageView7" />
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintTop_toTopOf="@+id/imageView7"
+                tools:text="شارع 10 - باب الشعرية - القاهره" />
 
 
 
@@ -93,16 +93,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:src="@drawable/ic_big_black_point"
-                app:layout_constraintEnd_toEndOf="@+id/view"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view" />
 
             <TextView
                 android:id="@+id/tv_startPoint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_marginStart="@dimen/_6sdp"
                 app:layout_constraintBottom_toTopOf="@+id/verticalView"
-                app:layout_constraintEnd_toStartOf="@+id/imageView18"
+                app:layout_constraintStart_toEndOf="@+id/imageView18"
                 app:layout_constraintTop_toTopOf="@+id/imageView18"
                 tools:text="شارع 10 - باب الشعرية - القاهره" />
             <View
@@ -129,13 +129,13 @@
                 android:id="@+id/tv_endPoint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_5sdp"
                 android:fontFamily="@font/cairo_regular"
-                tools:text="شارع 44 - السبتية - القاهره"
+                android:layout_marginStart="@dimen/_5sdp"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-                app:layout_constraintEnd_toStartOf="@+id/imageView8"
-                app:layout_constraintTop_toTopOf="@+id/imageView8" />
+                app:layout_constraintStart_toEndOf="@+id/imageView8"
+                app:layout_constraintTop_toTopOf="@+id/imageView8"
+                tools:text="شارع 44 - السبتية - القاهره" />
 
             <ImageView
                 android:id="@+id/imageView9"
@@ -151,13 +151,13 @@
                 android:id="@+id/tv_Time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_6sdp"
                 android:fontFamily="@font/cairo_regular"
-                tools:text="20/10/2021 ، 11:00ص"
+                android:layout_marginStart="@dimen/_6sdp"
                 android:textSize="@dimen/_11ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-                app:layout_constraintEnd_toStartOf="@+id/imageView9"
-                app:layout_constraintTop_toTopOf="@+id/imageView9" />
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toTopOf="@+id/imageView9"
+                tools:text="20/10/2021 ، 11:00ص" />
 
 
             <com.google.android.material.button.MaterialButton
@@ -167,7 +167,8 @@
                 android:backgroundTint="@color/bright_gray"
                 android:fontFamily="@font/cairo_semibold"
                 android:stateListAnimator="@null"
-                android:text="عرض التفاصيل"
+                android:text="@string/show_details"
+                android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="parent"

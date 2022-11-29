@@ -11,27 +11,25 @@
         android:layout_width="@dimen/_45sdp"
         android:layout_height="@dimen/_40sdp"
         android:background="@color/shimmer_grey"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/sh_tv_NotificationTitle"
         android:layout_width="0dp"
         android:layout_height="@dimen/_16sdp"
-        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_6sdp"
         android:background="@color/shimmer_grey"
-        app:layout_constraintEnd_toStartOf="@+id/sh_iv_NotificationType"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sh_iv_NotificationType"
         app:layout_constraintTop_toTopOf="@+id/sh_iv_NotificationType" />
 
     <View
         android:id="@+id/sh_tv_NotificationTime"
         android:layout_width="0dp"
         android:layout_height="@dimen/_16sdp"
-        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_6sdp"
         android:background="@color/shimmer_grey"
         app:layout_constraintBottom_toBottomOf="@+id/sh_iv_NotificationType"
-        app:layout_constraintEnd_toStartOf="@+id/sh_iv_NotificationType"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/sh_iv_NotificationType" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
